@@ -1,0 +1,11 @@
+name: echo hello
+on:
+ push
+
+jobs:
+  print_hello:
+    runs-on: ubuntu-latest
+    steps:
+     - name: print_hello
+       run: echo hello
+  
