@@ -1,5 +1,7 @@
 #!/bin/bash
-touch /github/workspace/cowsay.txt
-sudo apt-get update &&
-sudo apt-get install -y cowsay >> /github/workspace/cowsay.txt
-cowsay "Hello from C3!" >> /github/workspace/cowsay.txt
+set -e
+
+touch "$GITHUB_WORKSPACE/cowsay.txt"
+sudo apt-get update
+sudo apt-get install -y cowsay >> "$GITHUB_WORKSPACE/cowsay.txt"
+cowsay "Hello from C3!" >> "$GITHUB_WORKSPACE/cowsay.txt"
