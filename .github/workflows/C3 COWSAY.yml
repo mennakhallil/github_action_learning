@@ -12,13 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run COWSAY
+      - name: Run COWSAY with sh
         run: |
-          chmod +x ./scripts.sh
-          ./scripts.sh
+          sh ./scripts.sh
       - name: Upload cowsay output
         uses: actions/upload-artifact@v4
         with:
           name: cowsay-output
-          path: cowsay.txt
+          path: ./cowsay.txt
           
