@@ -6,11 +6,13 @@ on:
   pull_request:
     branches:
       - main
-need: [run_cowsay]
+
 jobs:
   run_cowsay:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Run COWSAY
-        run: ./scripts.sh
+        run: |
+          chmod +x ./scripts.sh
+          ./scripts.sh
